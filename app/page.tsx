@@ -6,7 +6,7 @@ export default function Page() {
   const { messages, input, handleInputChange, handleSubmit, setInput } = useChat({ id: 'amba-universal-copilot' });
   const [isListening, setIsListening] = useState(false);
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
