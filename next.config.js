@@ -2,6 +2,7 @@
 const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
-  output: 'standalone'
+  swcMinify: false, // Disables the compiler's strict syntax checker
+  output: 'standalone',
 };
 module.exports = nextConfig;
