@@ -7,11 +7,11 @@ export async function POST(req) {
   try {
     const { messages } = await req.json();
     const result = await streamText({
-      model: openai('gpt-4o'),
+      model('gpt-4o'),
       messages,
     });
     return result.toDataStreamResponse();
   } catch (error) {
-    return new Response(JSON.stringify({ error: 'Failed' }), { status: 500 });
+    return new Response(JSON.stringify({ error: 'Failed' }), { status });
   }
 }
