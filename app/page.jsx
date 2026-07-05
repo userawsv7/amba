@@ -15,7 +15,7 @@ export default function Page() {
   };
 
   const toggleVoice = () => {
-    const rec = new ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition)();
+    const rec = new ((window).SpeechRecognition || (window).webkitSpeechRecognition)();
     rec.start();
     setIsListening(true);
     rec.onresult = (e) => { setInput(e.results[0][0].transcript); setIsListening(false); };
